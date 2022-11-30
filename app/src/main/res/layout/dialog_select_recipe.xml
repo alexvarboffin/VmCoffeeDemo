@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/material_box"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:text="@string/water_yield_range"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:text="@string/out_material_time_s_range"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:text="@string/continue_stir_time_s_info_range"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Spinner
+            android:id="@+id/recipeMaterial1Sp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/materialBox"
+            android:gravity="center"
+            android:text="@string/material_box"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/recipeWaterYield1Et"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/recipeOutMaterialTime1Et"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/recipeStirTime1Et"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Spinner
+            android:id="@+id/recipeMaterial2Sp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/materialBox"
+            android:gravity="center"
+            android:text="@string/material_box"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/recipeWaterYield2Et"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/recipeOutMaterialTime2Et"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/recipeStirTime2Et"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Spinner
+            android:id="@+id/recipeMaterial3Sp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/materialBox"
+            android:gravity="center"
+            android:text="@string/material_box"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/recipeWaterYield3Et"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/recipeOutMaterialTime3Et"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/recipeStirTime3Et"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Spinner
+            android:id="@+id/recipeMaterial4Sp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/materialBox"
+            android:gravity="center"
+            android:text="@string/material_box"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/recipeWaterYield4Et"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/recipeOutMaterialTime4Et"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/recipeStirTime4Et"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Spinner
+            android:id="@+id/recipeMaterial5Sp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/materialBox"
+            android:gravity="center"
+            android:text="@string/material_box"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/recipeWaterYield5Et"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/recipeOutMaterialTime5Et"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/recipeStirTime5Et"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/selectRecipeCancelBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel" />
+
+        <Button
+            android:id="@+id/selectRecipeOKBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/ok" />
+    </LinearLayout>
+</LinearLayout>

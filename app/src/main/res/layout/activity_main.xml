@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eef0f1"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/language"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff">
+
+                <Spinner
+                    android:id="@+id/languageSp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/languageArray" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="#ffffff"
+                android:textSize="30sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="#ffffff"
+                android:onClick="onExit"
+                android:text="@string/exit"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#AA00FF"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onStartConnect"
+                    android:text="@string/start_connect"
+                    android:textColor="#06AE0D"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onTest"
+                    android:text="Test"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/coffee_machine"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/coffeeSerialPortEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:minWidth="150dp"
+                android:text="/dev/ttyO3"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20sp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/iceUseCb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ice_machine"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:id="@+id/iceWaterUseCb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ice_water_machine"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/iceSerialPortEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:minWidth="150dp"
+                android:text="/dev/ttyO4"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/connectResultTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a2dbf4"
+            android:textColor="#F10555" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#70b6d4"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/coffeeMakeDrinkBt"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
+                android:onClick="onMakeDrink"
+                android:text="@string/make_drink"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/coffeeCupDoorRg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/coffeeMakeDrinkBt"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/coffeeElectricDoorRb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/electric_door" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/electromagnet_door" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/coffeeOutIceTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/coffeeCupDoorRg"
+                android:text="@string/out_ice_cube_g"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:visibility="invisible" />
+
+            <EditText
+                android:id="@+id/coffeeOutIceVolumeEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/coffeeOutIceTv"
+                android:minWidth="50dp"
+                android:text="30"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="@string/make_drink_step"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/coffeeSelectRecipeBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/coffeeMakeDrinkBt"
+                android:layout_alignParentEnd="true"
+                android:onClick="onSelectRecipe"
+                android:text="@string/select_recipe" />
+
+            <TextView
+                android:id="@+id/coffeeMakeDrinkRecipeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/coffeeSelectRecipeBt"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/coffeeMakeDrinkRecipeTv"
+                android:text="@string/recipe_point"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a2dbf4"
+            android:padding="5dp"
+            android:text="@string/coffee_machine_command"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a2dbf4"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/coffeeSetTempBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_water_temp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/min_Temp_range" />
+
+            <EditText
+                android:id="@+id/coffeeMinTempEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="50dp"
+                android:text="85"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/max_Temp_range" />
+
+            <EditText
+                android:id="@+id/coffeeMaxTempEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="50dp"
+                android:text="100"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeSetInfraredBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/setting_infrared"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/coffeeHasInfraredCb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/has_infrared" />
+
+            <Button
+                android:id="@+id/coffeeSetCupDoorBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/setting_cup_door"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/coffeeHasCupDoorCb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/has_cup_door" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a2dbf4"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/coffeeRestartBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/restart_board"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeSelfCheckBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/self_check"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeReadVersionBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/read_version"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeClearResultBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear_run_result"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeGetAllFaultBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/get_all_fault"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a2dbf4"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/coffeeGrindingBeansBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grinding_beans"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeOutCoffeePowderBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/out_coffee_powder"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeBrewingMotorUpBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brewing_motor_up"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeBrewingMotorDownBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brewing_motor_down"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeMoveMouthOutBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/move_the_mouth_out"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeMoveMouthInBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/move_the_mouth_in"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFAB00"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/coffeeFallCupBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fall_cup"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeFallLidBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fall_lid"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeFallStickBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fall_stick"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/coffeeOpenCupDoorElectricBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/open_cup_door_electric"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/coffeeCloseCupDoorElectricBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/close_cup_door_electric"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/coffeeOpenCupDoorElectromagnetBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/open_cup_door_electromagnet"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/coffeeOpenElectromagnetDoorTimeEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="40dp"
+                android:text="3"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(0~12s)" />
+
+            <Button
+                android:id="@+id/coffeeOpenCabinetDoorBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/open_cabinet_door"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/coffeeCleanRG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a2dbf4"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/coffeeCleanBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clean"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/coffeeClean1Rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:tag="1"
+                android:text="@string/pipeline_value" />
+
+            <RadioButton
+                android:id="@+id/coffeeClean2Rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="2"
+                android:text="@string/pipeline_value" />
+
+            <RadioButton
+                android:id="@+id/coffeeClean3Rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="3"
+                android:text="@string/pipeline_value" />
+
+            <RadioButton
+                android:id="@+id/coffeeClean4Rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="4"
+                android:text="@string/pipeline_value" />
+
+            <RadioButton
+                android:id="@+id/coffeeCleanBeanRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="9"
+                android:text="@string/grinding_beans" />
+
+            <RadioButton
+                android:id="@+id/coffeeCleanAllRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="10"
+                android:text="@string/all" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/coffeeOutWaterRG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a2dbf4"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/coffeeOutWaterBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/out_water"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/coffeeOutWaterGrindingRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:tag="1"
+                android:text="@string/grinding_beans" />
+
+            <RadioButton
+                android:id="@+id/coffeeOutWater1Rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="2"
+                android:text="@string/pipeline_value" />
+
+            <RadioButton
+                android:id="@+id/coffeeOutWater2Rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:tag="3"
+                android:text="@string/pipeline_value" />
+
+            <RadioButton
+                android:id="@+id/coffeeOutWater3Rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="4"
+                android:text="@string/pipeline_value" />
+
+            <RadioButton
+                android:id="@+id/coffeeOutWater4Rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="5"
+                android:text="@string/pipeline_value" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/water_volume_ml" />
+
+            <EditText
+                android:id="@+id/coffeeOutWaterEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="50dp"
+                android:text="100"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#B1C9F8"
+            android:padding="5dp"
+            android:text="@string/ice_machine_command"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#B1C9F8"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/iceRestartBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/restart_board"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/iceReadVersionBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/read_version"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/iceClearResultBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear_run_result"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/iceOutIceWaterBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/out_ice_water_ml"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/iceOutIceWaterVolumeEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="50dp"
+                android:text="30"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/iceOutIceCubeBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/out_ice_cube_g"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/iceOutIceCubeVolumeEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="50dp"
+                android:text="30"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/iceDrainIceBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drain_ice_s"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/iceDrainIceTimeEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="50dp"
+                android:text="10"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/iceRemovePeelBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remove_peel"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/iceReviseBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/revise"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/iceSetTempBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_temp"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/iceSetTempValueEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="50dp"
+                android:text="3"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/iceReadTempBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/read_temp"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#50546A"
+            android:padding="5dp"
+            android:text="@string/command_send_state"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cmdSendStateTv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#FFDD2D"
+            android:padding="5dp"
+            android:scrollbars="vertical"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#50546A"
+            android:padding="5dp"
+            android:text="@string/machine_state"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/current_water_temp_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/max_water_temp_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/min_water_temp_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/surplus_water_yield_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/error_code_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/current_action_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/result_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/machine_state_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/current_setting_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/refresh_time_point"
+                    android:textColor="#3DE444"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="----------------------------------"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/ice_temp_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/result_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/iceStateTextTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/ice_machine_state_point"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/iceWeightTextTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/ice_electronic_scale_point"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/iceMotorTextTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/ice_motor_state_point"
+                    android:textColor="#F33A8A"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/refresh_time_point"
+                    android:textColor="#3DE444"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/coffeeCurrentWaterTempTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coffeeMaxWaterTempTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coffeeMinWaterTempTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coffeeSurplusWaterYieldTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coffeeErrorCodeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#F62F20"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coffeeActionTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coffeeResultTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coffeeMachineTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coffeeSettingTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coffeeRefreshTimeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="#3DE444"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="----------------------------------"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/iceTempTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/iceResultTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/iceStateTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#F31717"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/iceWeightTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/iceMotorTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#F33370"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/iceRefreshTimeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="#3DE444"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="materialBox">
+        <item>@string/nothing</item>
+        <item>@string/material_box_1</item>
+        <item>@string/material_box_2</item>
+        <item>@string/material_box_3</item>
+        <item>@string/material_box_4</item>
+        <item>@string/material_box_5</item>
+        <item>@string/coffee</item>
+    </string-array>
+
+
+    <string-array name="languageArray">
+        <item>@string/follow_system</item>
+        <item>@string/chinese</item>
+        <item>@string/english</item>
+    </string-array>
+
+</resources>
